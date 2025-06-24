@@ -7,6 +7,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 ## 📦 Liste des documentations
 
 ### Langages de programmation
+
 - [C#](./data/csharp.md)
 - [CSS](./data/css.md)
 - [Go](./data/go.md)
@@ -19,6 +20,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [SCSS](./data/scss.md)
 
 ### Frameworks et bibliothèques
+
 - [Bootstrap](./data/bootstrap.md)
 - [Hibernate](./data/hibernate.md)
 - [NestJS](./data/nestjs.md)
@@ -29,6 +31,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [Tailwind CSS](./data/tailwind.md)
 
 ### Outils et plateformes
+
 - [Apache](./data/apache.md)
 - [CI/CD](./data/ci_cd.md)
 - [Cloud Platforms (AWS, GCP, Azure, GitLab)](./data/cloud_platforms.md)
@@ -48,15 +51,18 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [Yarn](./data/yarn.md)
 
 ### Tests et couverture
+
 - [Tests](./data/tests.md)
 - [Tests E2E](./data/tests-e2e.md)
 - [Coverage](./data/coverage.md)
 
 ### API et requêtes
+
 - [GraphQL](./data/graphql.md)
 - [REST](./data/rest.md)
 
 ### Outils de build et gestion de dépendances
+
 - [Dotnet](./data/dotnet.md)
 - [Maven](./data/maven.md)
 
@@ -67,64 +73,6 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 1. **Naviguez dans les fichiers** : Cliquez sur les liens ci-dessus pour accéder à la documentation souhaitée.
 2. **Explorez les exemples pratiques** : Chaque fichier contient des exemples concrets pour vous aider à démarrer rapidement.
 3. **Suivez les bonnes pratiques** : Les sections "Bonnes pratiques" vous guideront pour optimiser votre utilisation des outils et technologies.
-
----
-
-## 🛠 Contribuer
-
-Si vous souhaitez ajouter ou améliorer une documentation, n'hésitez pas à soumettre une pull request. Toute contribution est la bienvenue !
-
----
-
-## 📂 Structure du projet
-
-```
-data/
-├── apache.md
-├── bootstrap.md
-├── ci_cd.md
-├── cloud_platforms.md
-├── composer.md
-├── coverage.md
-├── csharp.md
-├── css.md
-├── docker.md
-├── dotnet.md
-├── git.md
-├── go.md
-├── graphql.md
-├── hibernate.md
-├── html.md
-├── ia.md
-├── java.md
-├── javascript.md
-├── kotlin.md
-├── kubernetes.md
-├── linux.md
-├── markdown.md
-├── maven.md
-├── mutagen.md
-├── nestjs.md
-├── nextjs.md
-├── nginx.md
-├── nodejs.md
-├── npm.md
-├── php.md
-├── postgresql.md
-├── python.md
-├── react.md
-├── regex.md
-├── rest.md
-├── scss.md
-├── springboot.md
-├── swagger.md
-├── symfony.md
-├── tailwind.md
-├── tests-e2e.md
-├── tests.md
-├── typeorm.md
-├── yarn.md
-```
 
 ---
 
