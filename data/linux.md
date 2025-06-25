@@ -101,6 +101,15 @@ grep "text" <file>                        # Recherche du texte dans un fichier
 grep -r "text" /path/to/directory         # Recherche récursive du texte dans un répertoire
 grep -i "text" <file>                     # Recherche insensible à la casse
 locate <filename>                         # Recherche rapide de fichiers par leur nom (nécessite une base de données mise à jour)
+
+find /path/to/directory -name "README.md" -o -name "DOCS.md" | xargs grep -i "text"
+# Recherche un texte (insensible à la casse) dans tous les fichiers README.md ou DOCS.md
+
+find /path/to/directory -name "README.md" -o -name "DOCS.md" -not -path "*/vendor/*" -not -path "*/node_modules/*" | xargs grep -i "text"
+# Recherche un texte (insensible à la casse) dans tous les fichiers README.md ou DOCS.md en omettant les dossiers vendor et node_modules
+
+find /path/to/directory -type d \( -name "tmp" -o -name "temp" \) | xargs grep -i "text"
+# Recherche un texte (insensible à la casse) dans tous les dossiers nommés tmp ou temp
 ```
 
 ### Compression et décompression
@@ -206,14 +215,6 @@ watch -n <seconds> <command>                 # Exécute une commande périodique
 
 ---
 
-## Liens utiles
-
-- [Guide complet des commandes Linux](https://linuxcommand.org/)
-- [Tutoriels sur les commandes avancées](https://www.tecmint.com/linux-command-line-tips/)
-- [Documentation officielle Linux](https://www.kernel.org/doc/html/latest/)
-
-```
-
 ### Gestion des packages (Debian/Ubuntu)
 
 ```bash
@@ -241,7 +242,7 @@ free -h                                      # Affiche l'utilisation de la mémo
 
 ---
 
-## Liens utiles pour les commandes avancées
+## Liens utiles
 
 - [Guide complet des commandes Linux](https://linuxcommand.org/)
 - [Tutoriels sur les commandes avancées](https://www.tecmint.com/linux-command-line-tips/)
