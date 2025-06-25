@@ -37,31 +37,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [NestJS](./data/nestjs.md)
 - [Spring Boot](./data/springboot.md)
 - [Symfony](./data/symfony.md)
-
-### Bibliothèques et outils
-
-- [Hibernate](./data/hibernate.md)
-- [Tiptap](./data/tiptap.md)
-
-### Outils DevOps et plateformes cloud
-
-- [Apache](./data/apache.md)
-- [Authentication & Authorization](./data/authentication-authorization.md)
-- [CI/CD](./data/ci_cd.md)
-- [Cloud Platforms (AWS, GCP, Azure, GitLab)](./data/cloud_platforms.md)
-- [Docker](./data/docker.md)
-- [Kubernetes](./data/kubernetes.md)
-- [Linux](./data/linux.md)
-- [Logging](./data/logging.md)
-- [Mutagen](./data/mutagen.md)
-- [Nginx](./data/nginx.md)
-- [SonarQube](./data/sonarqube.md)
-
-### Bases de données et gestion des données
-
-- [PostgreSQL](./data/postgresql.md)
-- [MongoDB](./data/mongodb.md)
-- [TypeORM](./data/typeorm.md)
+- [.NET / C#](./data/dotnet.md)
 
 ### API et requêtes
 
@@ -73,6 +49,23 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [DTO (Data Transfer Object)](./data/dto.md)
 - [Zod](./data/zod.md)
 
+### Gestion des exceptions et validation
+
+- [Exceptions](./data/exceptions.md)
+- [Data Validation & Transformation](./data/data-validation-transformation.md)
+
+### Sécurité
+
+- [Authentication & Authorization](./data/authentication-authorization.md)
+
+### Surveillance et diagnostic
+
+- [Logging](./data/logging.md)
+
+### Bibliothèques et outils
+
+- [Tiptap](./data/tiptap.md)
+
 ### Qualité et tests
 
 - [ESLint](./data/eslint.md)
@@ -83,19 +76,39 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [Fixtures](./data/fixtures.md)
 - [Mocks](./data/mocks.md)
 
-### Gestion des exceptions et validation
+### Serveurs
 
-- [Exceptions](./data/exceptions.md)
-- [Data Validation & Transformation](./data/data-validation-transformation.md)
+- [Apache](./data/apache.md)
+- [Nginx](./data/nginx.md)
 
-### Outils de build et gestion de dépendances
+### Environnements d'exécution JavaScript
 
-- [Composer](./data/composer.md)
+- [Node.js](./data/nodejs.md)
+
+### Outils de build et Gestion de dépendances
+
 - [Dotnet](./data/dotnet.md)
 - [Maven](./data/maven.md)
-- [Node.js](./data/nodejs.md)
 - [NPM](./data/npm.md)
 - [Yarn](./data/yarn.md)
+- [Composer](./data/composer.md)
+
+### Bases de données et gestion des données
+
+- [PostgreSQL](./data/postgresql.md)
+- [MongoDB](./data/mongodb.md)
+- [TypeORM](./data/typeorm.md)
+- [Hibernate](./data/hibernate.md)
+
+### Outils DevOps et plateformes cloud
+
+- [Linux](./data/linux.md)
+- [Docker](./data/docker.md)
+- [Mutagen](./data/mutagen.md)
+- [CI/CD](./data/ci_cd.md)
+- [Cloud Platforms (AWS, GCP, Azure, GitLab)](./data/cloud_platforms.md)
+- [Kubernetes](./data/kubernetes.md)
+- [SonarQube](./data/sonarqube.md)
 
 ### Documentation et contrôle de version
 
