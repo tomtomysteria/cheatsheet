@@ -64,6 +64,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [GraphQL](./data/graphql.md)
 - [REST](./data/rest.md)
 - [SOAP](./data/soap.md)
+- [DTO (Data Transfer Object)](./data/dto.md)
 
 ### Outils de build et gestion de dépendances
 
@@ -72,7 +73,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 
 ### Autres sujets
 
-- [DTO (Data Transfer Object)](./data/dto.md)
+- [Outils de veille pour les développeurs](./data/developer-tools-watch.md)
 
 ---
 
