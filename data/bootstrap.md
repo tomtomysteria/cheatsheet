@@ -11,7 +11,7 @@ Bootstrap est un framework CSS populaire qui permet de créer des designs réact
 ### Installation
 
 ```bash
-npm install bootstrap
+npm install bootstrap                # Installe Bootstrap via npm
 ```
 
 ### Intégration dans un projet
@@ -34,16 +34,11 @@ Ajoutez Bootstrap à votre projet via un CDN ou en utilisant les fichiers télé
 
 ---
 
-## Exemples pratiques
-
-### Boutons
-
-```html
-<button class="btn btn-primary">Primary Button</button>
-<button class="btn btn-secondary">Secondary Button</button>
-```
+## Concepts clés
 
 ### Grille responsive
+
+La grille Bootstrap est basée sur un système de colonnes flexibles.
 
 ```html
 <div class="container">
@@ -52,6 +47,26 @@ Ajoutez Bootstrap à votre projet via un CDN ou en utilisant les fichiers télé
     <div class="col-md-6">Colonne 2</div>
   </div>
 </div>
+```
+
+### Classes utilitaires
+
+Bootstrap propose des classes utilitaires pour styliser rapidement les éléments.
+
+- **Espacement** : `m-3`, `p-4`
+- **Couleurs** : `bg-primary`, `text-danger`
+- **Alignement** : `text-center`, `float-end`
+- **Visibilité** : `d-none`, `d-md-block`
+
+---
+
+## Composants Bootstrap
+
+### Boutons
+
+```html
+<button class="btn btn-primary">Primary Button</button>
+<button class="btn btn-secondary">Secondary Button</button>
 ```
 
 ### Formulaires
@@ -93,6 +108,47 @@ Ajoutez Bootstrap à votre projet via un CDN ou en utilisant les fichiers télé
   </div>
 </div>
 ```
+
+### Alertes
+
+```html
+<div class="alert alert-success" role="alert">
+  Opération réussie !
+</div>
+<div class="alert alert-danger" role="alert">
+  Une erreur est survenue.
+</div>
+```
+
+### Navigation
+
+```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">À propos</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+```
+
+---
+
+## Bonnes pratiques
+
+1. **Utiliser les classes utilitaires** : Exploitez les classes utilitaires pour éviter d'écrire du CSS personnalisé.
+2. **Configurer les breakpoints** : Adaptez les designs aux différents écrans en utilisant les classes responsives.
+3. **Minimiser les fichiers CSS** : Utilisez les versions minifiées pour améliorer les performances.
+4. **Tester sur plusieurs navigateurs** : Assurez-vous que votre design fonctionne sur tous les navigateurs modernes.
 
 ---
 

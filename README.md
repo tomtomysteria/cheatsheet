@@ -8,7 +8,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 
 ### Langages de programmation
 
-- [C#](./data/csharp.md)
+- [.NET / C #](./data/dotnet.md)
 - [CSS](./data/css.md)
 - [Go](./data/go.md)
 - [HTML](./data/html.md)
@@ -46,6 +46,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [Node.js](./data/nodejs.md)
 - [NPM](./data/npm.md)
 - [PostgreSQL](./data/postgresql.md)
+- [MongoDB](./data/mongodb.md)
 - [Swagger](./data/swagger.md)
 - [TypeORM](./data/typeorm.md)
 - [Yarn](./data/yarn.md)
@@ -55,16 +56,23 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [Tests](./data/tests.md)
 - [Tests E2E](./data/tests-e2e.md)
 - [Coverage](./data/coverage.md)
+- [Fixtures](./data/fixtures.md)
+- [Mocks](./data/mocks.md)
 
 ### API et requêtes
 
 - [GraphQL](./data/graphql.md)
 - [REST](./data/rest.md)
+- [SOAP](./data/soap.md)
 
 ### Outils de build et gestion de dépendances
 
 - [Dotnet](./data/dotnet.md)
 - [Maven](./data/maven.md)
+
+### Autres sujets
+
+- [DTO (Data Transfer Object)](./data/dto.md)
 
 ---
 

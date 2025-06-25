@@ -2,7 +2,27 @@
 
 ## Introduction
 
-Hibernate est un framework ORM (Object-Relational Mapping) pour Java qui simplifie la gestion des bases de données en mappant les objets Java aux tables relationnelles. Il permet de réduire le code SQL et d'améliorer la maintenabilité des applications.
+Hibernate est un framework ORM (Object-Relational Mapping) pour Java qui simplifie la gestion des bases de données en mappant les objets Java aux tables relationnelles. Il permet de réduire le code SQL, d'améliorer la maintenabilité des applications, et de gérer les relations complexes entre les entités. Hibernate est largement utilisé dans les applications Java modernes pour sa flexibilité et ses fonctionnalités avancées.
+
+---
+
+## Concepts clés
+
+### ORM (Object-Relational Mapping)
+
+L'ORM permet de mapper les objets Java aux tables relationnelles, éliminant ainsi le besoin d'écrire du SQL manuel pour les opérations courantes.
+
+### Session et SessionFactory
+
+- **Session** : Une session est utilisée pour interagir avec la base de données. Elle est responsable de la persistance des objets.
+- **SessionFactory** : La SessionFactory est une usine qui produit des sessions. Elle est généralement configurée une fois et partagée dans toute l'application.
+
+### Cache
+
+Hibernate offre deux niveaux de cache :
+
+1. **Cache de premier niveau** : Activé par défaut, il est lié à la session.
+2. **Cache de second niveau** : Permet de partager les données entre plusieurs sessions.
 
 ---
 
@@ -48,6 +68,7 @@ Hibernate est un framework ORM (Object-Relational Mapping) pour Java qui simplif
 ### Exemple de classe Entity
 
 ```java
+// filepath: entities/User.java
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -83,6 +104,7 @@ public class User {
 ### Exemple de gestion des sessions
 
 ```java
+// filepath: main/Main.java
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -122,9 +144,42 @@ public class Main {
 
 ## Bonnes pratiques
 
-1. **Utiliser des annotations** : Préférez les annotations comme `@Entity` et `@Id` pour définir les entités.
+1. **Utiliser des annotations** : Préférez les annotations comme `@Entity`, `@Id`, et `@Column` pour définir les entités.
 2. **Configurer le cache** : Implémentez un cache de second niveau pour améliorer les performances.
 3. **Gérer les transactions** : Utilisez des transactions pour garantir l'intégrité des données.
+4. **Modulariser les entités** : Organisez les entités dans des packages dédiés pour une meilleure maintenabilité.
+5. **Optimiser les requêtes** : Utilisez des requêtes HQL (Hibernate Query Language) pour des opérations complexes.
+
+---
+
+## Enjeux du développement avec Hibernate
+
+1. **Réduction du code SQL** : Hibernate élimine le besoin d'écrire du SQL manuel pour les opérations courantes.
+2. **Gestion des relations complexes** : Hibernate simplifie la gestion des relations entre les entités (ex. `@OneToMany`, `@ManyToOne`).
+3. **Performance** : Hibernate offre des fonctionnalités avancées comme le cache de second niveau pour améliorer les performances.
+4. **Flexibilité** : Hibernate permet de changer facilement de base de données grâce à sa prise en charge des dialectes.
+5. **Scalabilité** : Hibernate est adapté aux applications nécessitant une gestion complexe des données.
+
+---
+
+## Commandes utiles pour Hibernate
+
+### Génération automatique des tables
+
+Configurez `hibernate.hbm2ddl.auto` dans `hibernate.cfg.xml` :
+
+- `create` : Crée les tables à chaque démarrage.
+- `update` : Met à jour les tables existantes.
+- `validate` : Vérifie la structure des tables sans les modifier.
+
+### Requêtes HQL
+
+```java
+String hql = "FROM User WHERE email = :email";
+Query<User> query = session.createQuery(hql, User.class);
+query.setParameter("email", "alice@example.com");
+List<User> users = query.getResultList();
+```
 
 ---
 
@@ -133,3 +188,4 @@ public class Main {
 - [Documentation officielle Hibernate](https://hibernate.org/)
 - [Tutoriels Hibernate](https://www.baeldung.com/hibernate-tutorial)
 - [Exemples de configuration Hibernate](https://docs.jboss.org/hibernate/orm/)
+- [Hibernate GitHub](https://github.com/hibernate/hibernate-orm)

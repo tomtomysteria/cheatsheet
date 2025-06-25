@@ -2,7 +2,25 @@
 
 ## Introduction
 
-Nginx est un serveur web performant utilisé pour le reverse proxy, la gestion des connexions, et le load balancing. Il est largement adopté pour sa capacité à gérer un grand nombre de connexions simultanées avec une faible utilisation des ressources.
+Nginx est un serveur web performant utilisé pour le reverse proxy, la gestion des connexions, et le load balancing. Il est largement adopté pour sa capacité à gérer un grand nombre de connexions simultanées avec une faible utilisation des ressources. Nginx est également utilisé pour servir des fichiers statiques, gérer des certificats SSL, et optimiser les performances des applications web.
+
+---
+
+## Concepts clés
+
+### Pourquoi utiliser Nginx ?
+
+1. **Performance** : Nginx est conçu pour gérer des milliers de connexions simultanées avec une faible consommation de mémoire.
+2. **Flexibilité** : Il peut être utilisé comme serveur web, reverse proxy, ou load balancer.
+3. **Sécurité** : Nginx prend en charge HTTPS, les certificats SSL, et les mécanismes de protection contre les attaques courantes (ex. DDoS).
+4. **Scalabilité** : Nginx facilite la mise à l'échelle des applications grâce au load balancing et au caching.
+
+### Enjeux pour les développeurs
+
+1. **Optimisation des performances** : Configurez le caching et la compression pour réduire la latence.
+2. **Sécurisation des connexions** : Implémentez HTTPS et configurez les certificats SSL.
+3. **Gestion des logs** : Analysez les logs pour identifier les problèmes et améliorer les performances.
+4. **Flexibilité des configurations** : Utilisez des fichiers de configuration séparés pour gérer plusieurs sites ou applications.
 
 ---
 
@@ -23,6 +41,15 @@ sudo systemctl status nginx              # Vérifie l'état du serveur Nginx
 ```bash
 sudo nginx -t                            # Teste la configuration Nginx
 sudo nginx -s reload                     # Recharge la configuration après modification
+```
+
+### Gestion des fichiers de configuration
+
+```bash
+sudo nano /etc/nginx/nginx.conf          # Édite le fichier de configuration principal
+sudo nano /etc/nginx/sites-available/<site> # Édite la configuration d'un site spécifique
+sudo ln -s /etc/nginx/sites-available/<site> /etc/nginx/sites-enabled/ # Active un site
+sudo rm /etc/nginx/sites-enabled/<site> # Désactive un site
 ```
 
 ---
@@ -100,6 +127,24 @@ server {
 }
 ```
 
+### Configuration de caching
+
+Activez le caching pour améliorer les performances.
+
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+
+    location / {
+        proxy_cache my_cache;
+        proxy_cache_valid 200 302 10m;
+        proxy_cache_valid 404 1m;
+        proxy_pass http://backend;
+    }
+}
+```
+
 ---
 
 ## Bonnes pratiques
@@ -113,6 +158,41 @@ server {
    ```
 
 3. **Surveiller les logs** : Analysez les fichiers de logs pour identifier les problèmes et optimiser les performances.
+4. **Sécuriser les connexions** : Implémentez HTTPS avec des certificats SSL et configurez les en-têtes de sécurité.
+5. **Optimiser les performances** : Configurez le caching et le load balancing pour réduire la latence.
+
+---
+
+## Outils utiles
+
+- **Certbot** : Automatisation de la configuration SSL avec Let's Encrypt.
+- **Logrotate** : Gestion des fichiers de logs pour éviter qu'ils ne deviennent trop volumineux.
+- **Nginx Amplify** : Outil de monitoring pour Nginx.
+
+---
+
+## Commandes avancées
+
+### Surveillance et diagnostic
+
+```bash
+sudo tail -f /var/log/nginx/access.log    # Surveille les logs d'accès en temps réel
+sudo tail -f /var/log/nginx/error.log     # Surveille les logs d'erreur en temps réel
+```
+
+### Gestion des certificats SSL
+
+```bash
+sudo certbot --nginx                     # Configure automatiquement SSL avec Let's Encrypt
+sudo certbot renew                       # Renouvelle les certificats SSL
+```
+
+### Optimisation des performances
+
+```nginx
+worker_processes auto;                   # Configure automatiquement le nombre de processus de travail
+worker_connections 1024;                 # Définit le nombre maximum de connexions par processus
+```
 
 ---
 
@@ -121,3 +201,4 @@ server {
 - [Documentation officielle Nginx](https://nginx.org/en/docs/)
 - [Tutoriels Nginx](https://www.digitalocean.com/community/tutorials/tag/nginx)
 - [Exemples de configuration Nginx](https://github.com/nginx/nginx/tree/main/conf)
+- [Certbot pour SSL](https://certbot.eff.org/)
