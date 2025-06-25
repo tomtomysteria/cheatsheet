@@ -14,49 +14,64 @@ La veille technologique est essentielle pour les développeurs afin de rester à
 - **Utilisation** : Organisez vos sources par catégories (ex. JavaScript, DevOps, IA).
 - **Lien** : [Feedly](https://feedly.com/)
 
-### 2. **GitHub Explore**
+### 2. **GitHub : Explore**
 
 - **Description** : Plateforme pour découvrir des projets open-source populaires et des tendances dans le développement.
 - **Utilisation** : Explorez les repositories par sujet ou technologie.
 - **Lien** : [GitHub Explore](https://github.com/explore)
 
-### 3. **Stack Overflow**
+### 3. **GitHub : Awesome Lists**
+
+- **Description** : Collections de ressources organisées par sujet, disponibles sur GitHub.
+- **Utilisation** : Explorez les listes pour découvrir des outils, frameworks, et tutoriels.
+- **Lien** : [Awesome Lists](https://github.com/sindresorhus/awesome)
+
+### 4. **GitHub : Suivi de projets**
+
+- **Description** : Plateforme permettant de suivre des projets open-source, des repositories populaires, et des changelogs.
+- **Utilisation** :
+  - Ajoutez des repositories à vos « stars » pour les retrouver facilement.
+  - Consultez les « trending repos » pour découvrir les projets en vogue.
+  - Suivez les changelogs (releases) pour rester informé des mises à jour.
+- **Lien** : [GitHub Trending](https://github.com/trending)
+
+### 5. **Stack Overflow**
 
 - **Description** : Communauté de développeurs où poser des questions et trouver des réponses sur des problèmes techniques.
 - **Utilisation** : Suivez les tags liés à vos technologies préférées pour rester informé.
 - **Lien** : [Stack Overflow](https://stackoverflow.com/)
 
-### 4. **Dev.to**
+### 6. **Dev.to**
 
 - **Description** : Plateforme communautaire où les développeurs partagent des articles, tutoriels, et expériences.
 - **Utilisation** : Recherchez des articles par tags ou technologies.
 - **Lien** : [Dev.to](https://dev.to/)
 
-### 5. **Medium**
+### 7. **Medium**
 
 - **Description** : Plateforme de publication où les développeurs et entreprises partagent des articles sur les technologies émergentes.
 - **Utilisation** : Suivez les publications des experts en développement.
 - **Lien** : [Medium](https://medium.com/)
 
-### 6. **Twitter**
+### 8. **Twitter**
 
 - **Description** : Réseau social permettant de suivre les leaders d'opinion, entreprises technologiques, et communautés de développeurs.
 - **Utilisation** : Créez des listes pour organiser les comptes à suivre par sujet.
 - **Lien** : [Twitter](https://twitter.com/)
 
-### 7. **Reddit**
+### 9. **Reddit**
 
 - **Description** : Plateforme communautaire avec des subreddits dédiés au développement logiciel (ex. r/programming, r/webdev).
 - **Utilisation** : Participez aux discussions et explorez les contenus partagés par la communauté.
 - **Lien** : [Reddit](https://www.reddit.com/)
 
-### 8. **Hacker News**
+### 10. **Hacker News**
 
 - **Description** : Site d'actualités technologiques et de discussions sur les innovations dans le développement logiciel.
 - **Utilisation** : Consultez les articles les plus votés pour découvrir les tendances.
 - **Lien** : [Hacker News](https://news.ycombinator.com/)
 
-### 9. **YouTube**
+### 11. **YouTube**
 
 - **Description** : Plateforme vidéo où les développeurs partagent des tutoriels, conférences, et démonstrations.
 - **Utilisation** : Abonnez-vous aux chaînes spécialisées en développement.
@@ -65,38 +80,32 @@ La veille technologique est essentielle pour les développeurs afin de rester à
   - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
   - [OpenClassrooms](https://www.youtube.com/c/OpenClassrooms)
 
-### 10. **Podcasts**
+### 12. **Podcasts**
 
 - **Description** : Émissions audio sur des sujets techniques, tendances, et expériences de développeurs.
 - **Exemples** :
   - [Syntax](https://syntax.fm/) : Podcast sur le développement web.
   - [CodeNewbie](https://www.codenewbie.org/podcast) : Podcast pour les développeurs débutants.
 
-### 11. **Daily.dev**
+### 13. **Daily.dev**
 
 - **Description** : Extension de navigateur qui centralise les actualités et articles pour les développeurs.
 - **Utilisation** : Consultez les tendances directement depuis votre navigateur.
 - **Lien** : [Daily.dev](https://daily.dev/)
 
-### 12. **Hashnode**
+### 14. **Hashnode**
 
 - **Description** : Plateforme de blogging pour les développeurs, avec des articles sur les technologies et bonnes pratiques.
 - **Utilisation** : Suivez les blogs des développeurs et partagez vos propres articles.
 - **Lien** : [Hashnode](https://hashnode.com/)
 
-### 13. **Awesome Lists (GitHub)**
-
-- **Description** : Collections de ressources organisées par sujet, disponibles sur GitHub.
-- **Utilisation** : Explorez les listes pour découvrir des outils, frameworks, et tutoriels.
-- **Lien** : [Awesome Lists](https://github.com/sindresorhus/awesome)
-
-### 14. **Lobsters**
+### 15. **Lobsters**
 
 - **Description** : Communauté de partage d'actualités technologiques et de discussions.
 - **Utilisation** : Participez aux discussions et explorez les articles partagés.
 - **Lien** : [Lobsters](https://lobste.rs/)
 
-### 15. **Exploit DB / CVE Details**
+### 16. **Exploit DB / CVE Details**
 
 - **Description** : Bases de données sur les vulnérabilités et exploits connus.
 - **Utilisation** : Suivez les dernières vulnérabilités pour renforcer la sécurité de vos projets.
@@ -104,19 +113,19 @@ La veille technologique est essentielle pour les développeurs afin de rester à
   - [Exploit DB](https://www.exploit-db.com/)
   - [CVE Details](https://www.cvedetails.com/)
 
-### 16. **Have I Been Pwned**
+### 17. **Have I Been Pwned**
 
 - **Description** : Service permettant de vérifier si vos données ont été compromises dans des violations de sécurité.
 - **Utilisation** : Surveillez vos adresses email et mots de passe.
 - **Lien** : [Have I Been Pwned](https://haveibeenpwned.com/)
 
-### 17. **Shodan.io**
+### 18. **Shodan.io**
 
 - **Description** : Moteur de recherche pour les appareils connectés à Internet.
 - **Utilisation** : Identifiez les vulnérabilités des systèmes exposés en ligne.
 - **Lien** : [Shodan.io](https://www.shodan.io/)
 
-### 18. **Notion / Obsidian**
+### 19. **Notion / Obsidian**
 
 - **Description** : Outils de prise de notes et d'organisation pour structurer votre veille.
 - **Utilisation** : Créez des bases de données et des notes pour centraliser vos découvertes.
@@ -124,7 +133,7 @@ La veille technologique est essentielle pour les développeurs afin de rester à
   - [Notion](https://www.notion.so/)
   - [Obsidian](https://obsidian.md/)
 
-### 19. **IFTTT / Zapier**
+### 20. **IFTTT / Zapier**
 
 - **Description** : Automatisation de tâches pour connecter vos outils de veille.
 - **Utilisation** : Configurez des workflows pour recevoir des alertes ou centraliser vos flux.
@@ -132,7 +141,7 @@ La veille technologique est essentielle pour les développeurs afin de rester à
   - [IFTTT](https://ifttt.com/)
   - [Zapier](https://zapier.com/)
 
-### 20. **Hacker News Digest**
+### 21. **Hacker News Digest**
 
 - **Description** : Résumé des articles populaires sur Hacker News.
 - **Utilisation** : Recevez les tendances directement par email ou via une application.
@@ -178,3 +187,4 @@ La veille technologique est essentielle pour les développeurs afin de rester à
 - [IFTTT](https://ifttt.com/)
 - [Zapier](https://zapier.com/)
 - [Hacker News Digest](https://hndigest.com/)
+- [GitHub Trending](https://github.com/trending)
