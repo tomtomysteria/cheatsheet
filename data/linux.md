@@ -105,7 +105,7 @@ locate <filename>                         # Recherche rapide de fichiers par leu
 find /path/to/directory -name "README.md" -o -name "DOCS.md" | xargs grep -i "text"
 # Recherche un texte (insensible à la casse) dans tous les fichiers README.md ou DOCS.md
 
-find /path/to/directory -name "README.md" -o -name "DOCS.md" -not -path "*/vendor/*" -not -path "*/node_modules/*" | xargs grep -i "text"
+find /path/to/directory -name "README.md" -o -name "DOCS.md" -not -path "*/vendor/*" -not -path "*/node_modules/*" -print0 | xargs -0 grep -i "text"
 # Recherche un texte (insensible à la casse) dans tous les fichiers README.md ou DOCS.md en omettant les dossiers vendor et node_modules
 
 find /path/to/directory -type d \( -name "tmp" -o -name "temp" \) | xargs grep -i "text"
