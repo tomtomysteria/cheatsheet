@@ -159,6 +159,12 @@ Adapt — remix, transform, and build upon the material
 3. **Documenter la licence** :
    - Mentionnez la licence dans le fichier README.md de votre projet.
 
+```markdown
+## Licence
+
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](./LICENSE) pour plus de détails.
+```
+
 ---
 
 ## Bonnes pratiques

@@ -31,6 +31,9 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 
 - [React](./data/react.md)
 - [Next.js](./data/nextjs.md)
+- [Angular](./data/angular.md)
+- [Vue](./data/vue.md)
+- [Vite](./data/vite.md)
 
 ### Frameworks Backend
 

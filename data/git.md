@@ -87,7 +87,7 @@ git stash pop                # Récupère les modifications sauvegardées
 
 ```bash
 git tag <tag-name>           # Crée un tag
-git tag -a <tag-name> -m "Message" # Crée un tag annoté
+git tag -a <tag-name> -m "Message" # Crée un tag annoté / ex : git tag -a v1.0 -m "Version 1.0"
 git push origin <tag-name>   # Pousse un tag vers le dépôt distant
 git tag -d <tag-name>        # Supprime un tag local
 git push origin :refs/tags/<tag-name> # Supprime un tag distant
@@ -100,6 +100,33 @@ git diff                     # Compare les modifications non validées
 git diff <branch-name>       # Compare avec une autre branche
 git blame <file>             # Affiche l'historique des modifications ligne par ligne
 git show <commit-id>         # Affiche les détails d'un commit spécifique
+```
+
+### Nettoyage
+
+```bash
+git clean -f                  # Supprime les fichiers non suivis
+git clean -fd                 # Supprime les fichiers et dossiers non suivis
+git clean -n                  # Affiche les fichiers qui seraient supprimés sans les supprimer
+```
+
+### Configuration avancée
+
+```bash
+git config --global alias.st status  # Crée un alias pour la commande `git status`
+git config --global core.editor "code --wait"  # Définit VS Code comme éditeur par défaut
+git config --global diff.tool meld  # Configure Meld comme outil de comparaison
+git config --global merge.tool meld # Configure Meld comme outil de fusion
+```
+
+### Logs avancés
+
+```bash
+git log --oneline               # Affiche les commits en une seule ligne
+git log --graph --decorate      # Affiche un graphe des commits avec décorations
+git log --author="Nom"         # Filtre les commits par auteur
+git log --since="2 weeks ago"  # Filtre les commits récents
+git log --stat                  # Affiche les statistiques des fichiers modifiés
 ```
 
 ---
