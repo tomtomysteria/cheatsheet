@@ -103,15 +103,35 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [TypeORM](./data/typeorm.md)
 - [Hibernate](./data/hibernate.md)
 
-### Outils DevOps et plateformes cloud
+### Outils DevOps
 
-- [Linux](./data/linux.md)
-- [Docker](./data/docker.md)
-- [Mutagen](./data/mutagen.md)
-- [CI/CD](./data/ci_cd.md)
-- [Cloud Platforms (AWS, GCP, Azure, GitLab)](./data/cloud_platforms.md)
-- [Kubernetes](./data/kubernetes.md)
-- [SonarQube](./data/sonarqube.md)
+> Les bonnes pratiques DevOps permettent d'optimiser les processus de développement et de déploiement tout en garantissant la qualité et la portabilité des applications.
+
+- 🚀 **Automatisation des déploiements avec CI/CD** : Simplifiez et accélérez les mises en production.
+- 🔍 **Surveillance continue** : Identifiez et corrigez les problèmes pour améliorer la qualité.
+- 📦 **Conteneurisation des applications** : Assurez la portabilité et la scalabilité entre différents environnements.
+
+  #### Conteneurs et orchestration
+
+  - [Docker](./data/docker.md)
+  - [Kubernetes](./data/kubernetes.md)
+
+  #### Synchronisation et automatisation
+
+  - [Mutagen](./data/mutagen.md)
+  - [CI/CD](./data/ci_cd.md)
+
+  #### Plateformes cloud
+
+  - [Cloud Platforms (AWS, GCP, Azure, GitLab)](./data/cloud_platforms.md)
+
+  #### Qualité et analyse de code
+
+  - [SonarQube](./data/sonarqube.md)
+
+  #### Systèmes d'exploitation
+
+  - [Linux](./data/linux.md)
 
 ### Documentation et contrôle de version
 
