@@ -98,6 +98,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 
 ### Bases de données et gestion des données
 
+- [SQL](./data/sql.md)
 - [PostgreSQL](./data/postgresql.md)
 - [MongoDB](./data/mongodb.md)
 - [TypeORM](./data/typeorm.md)
