@@ -173,6 +173,32 @@ docker-compose down               # Arrête et supprime les conteneurs
 
 ## Bonnes pratiques
 
+## À connaître en entreprise (Dockerfile)
+
+### Multi-stage build (exemple Spring Boot)
+
+Objectif : image runtime plus petite.
+
+```dockerfile
+FROM maven:3.9.9-eclipse-temurin-21 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn -B -DskipTests package
+
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
+```
+
+### Points clés
+
+- `.dockerignore` (accélère et évite d’embarquer des secrets)
+- tags immuables (SHA) en CI
+- utilisateur non-root si possible
+
 1. **Minimiser la taille des images** : Utilisez des images de base légères comme `alpine`.
 2. **Nettoyer les conteneurs et images inutilisés** : Utilisez `docker system prune` pour libérer de l'espace.
 3. **Utiliser des volumes** : Configurez des volumes pour persister les données entre les conteneurs.

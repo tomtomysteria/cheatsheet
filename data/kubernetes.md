@@ -8,7 +8,7 @@ Kubernetes est une plateforme open-source pour orchestrer des applications conte
 
 ## Exemple de pipeline CI/CD avec Docker et Kubernetes
 
-Voici un exemple de pipeline CI/CD utilisant Docker pour construire des images et Kubernetes pour déployer des conteneurs. Ce pipeline est conçu pour GitLab CI/CD.
+Voici un exemple de pipeline CI/CD utilisant Docker pour construire des images et Kubernetes pour déployer via **Helm**. Ce pipeline est conçu pour GitLab CI/CD.
 
 ```yaml
 stages:
@@ -18,7 +18,7 @@ stages:
 
 variables:
   IMAGE_NAME: registry.example.com/my-app
-  KUBECONFIG: $CI_PROJECT_DIR/kubeconfig
+   KUBECONFIG: $CI_PROJECT_DIR/.kube/config
 
 build:
   stage: build
@@ -40,12 +40,13 @@ deploy:
     name: production
     url: https://my-app.example.com
   script:
-    # Configurer kubectl avec le fichier kubeconfig
-    - export KUBECONFIG=$KUBECONFIG
-    # Mettre à jour le déploiement Kubernetes avec la nouvelle image
-    - kubectl set image deployment/my-app my-app-container=$IMAGE_NAME:$CI_COMMIT_SHA
-    # Vérifier que le déploiement est en cours
-    - kubectl rollout status deployment/my-app
+      # Configurer kubectl/helm avec le fichier kubeconfig
+      - mkdir -p $CI_PROJECT_DIR/.kube
+      - export KUBECONFIG=$KUBECONFIG
+      # Déployer/mettre à jour via Helm en injectant le tag d'image
+      - helm upgrade --install my-app ./helm/my-app -n my-namespace --create-namespace \
+            --set image.repository=$IMAGE_NAME \
+            --set image.tag=$CI_COMMIT_SHA
 ```
 
 ### Explications
@@ -58,15 +59,20 @@ deploy:
    - Exécuter des tests dans un conteneur Docker basé sur l'image construite.
 
 3. **Étape `deploy`** :
-   - Utiliser `kubectl` pour déployer l'image sur un cluster Kubernetes.
-   - Mettre à jour le déploiement Kubernetes avec la nouvelle image.
-   - Vérifier que le déploiement est terminé avec `kubectl rollout status`.
+   - Utiliser Helm pour déployer l'image sur un cluster Kubernetes.
+   - Mettre à jour la release Helm en injectant le tag de l'image.
 
 ### Prérequis
 
 - **Docker** : Installé sur l'environnement CI/CD pour construire et exécuter des conteneurs.
 - **Kubernetes** : Un cluster configuré avec un fichier `kubeconfig` accessible dans le pipeline.
 - **Registre Docker** : Un registre pour stocker les images Docker (exemple : Docker Hub, GitLab Container Registry).
+- **Helm** : binaire disponible dans l’image du job `deploy` (ou installé dans le job).
+
+Voir aussi :
+
+- Helm : `data/helm.md`
+- GitLab CI/CD : `data/gitlab-ci.md`
 
 ---
 
@@ -283,6 +289,40 @@ spec:
 ---
 
 ## Bonnes pratiques
+
+## À connaître en production (indispensable)
+
+### Probes (liveness/readiness)
+
+```yaml
+livenessProbe:
+   httpGet:
+      path: /actuator/health/liveness
+      port: 8080
+readinessProbe:
+   httpGet:
+      path: /actuator/health/readiness
+      port: 8080
+```
+
+### ConfigMap / Secret
+
+- Config applicative non-secrète : ConfigMap
+- Secrets (tokens, passwords) : Secret (ou ExternalSecrets/SealedSecrets en entreprise)
+
+### Ingress
+
+Expose HTTP(S) vers l’extérieur via un Ingress Controller (Nginx, Traefik, …).
+
+### Troubleshooting
+
+```bash
+kubectl get events -n my-namespace
+kubectl describe pod <pod> -n my-namespace
+kubectl logs <pod> -n my-namespace --tail=200
+kubectl rollout status deployment/my-app -n my-namespace
+kubectl rollout undo deployment/my-app -n my-namespace
+```
 
 1. **Utiliser des namespaces** : Organisez vos ressources en namespaces pour une meilleure isolation.
 

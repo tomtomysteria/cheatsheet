@@ -4,6 +4,11 @@
 
 CI/CD (Intégration Continue / Déploiement Continu) est une pratique essentielle pour automatiser le développement, les tests, et le déploiement des applications. Elle permet d'améliorer la qualité du code, de réduire les délais de livraison, et de minimiser les erreurs. CI/CD repose sur des pipelines qui orchestrent les étapes nécessaires pour transformer le code source en une application prête à être déployée.
 
+Voir aussi :
+
+- GitLab CI/CD : `data/gitlab-ci.md`
+- Jenkins : `data/jenkins.md`
+
 ---
 
 ## Concepts clés
@@ -29,6 +34,8 @@ CI/CD (Intégration Continue / Déploiement Continu) est une pratique essentiell
 ### Jenkins
 
 Jenkins est un outil open-source pour l'automatisation des pipelines CI/CD.
+
+👉 Pour une doc plus complète (agents, Jenkinsfile Java/Angular, credentials, Docker) : `data/jenkins.md`.
 
 ```bash
 # Commandes essentielles
@@ -70,6 +77,8 @@ pipeline {
 ### GitLab CI/CD
 
 GitLab CI/CD est intégré à GitLab pour gérer les pipelines directement dans les projets.
+
+👉 Pour une doc plus complète (cache/artifacts, rules/needs, exemples Java/Angular/Docker) : `data/gitlab-ci.md`.
 
 Exemple de fichier `.gitlab-ci.yml` :
 

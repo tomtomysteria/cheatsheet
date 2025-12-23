@@ -153,6 +153,21 @@ pg_basebackup -U postgres -D /path/to/replica -Fp -Xs -P -R # Configure une rép
 
 ---
 
+## À connaître en production
+
+### `VACUUM` / `ANALYZE`
+
+- `ANALYZE` met à jour les statistiques pour l’optimiseur.
+- `VACUUM` limite la croissance (MVCC) et évite certains problèmes de perf.
+
+### Locks
+
+Certaines migrations (DDL) peuvent bloquer : penser stratégie Liquibase “expand/contract”.
+
+### Rôles et permissions
+
+Créer un rôle applicatif minimal (pas superuser) + droits stricts sur schémas/tables.
+
 ## Liens utiles
 
 - [Documentation officielle PostgreSQL](https://www.postgresql.org/docs/)

@@ -137,6 +137,24 @@ mvn exec:java -Dexec.mainClass=com.example.Main
 
 ## Bonnes pratiques
 
+## À connaître en entreprise
+
+### Multi-modules
+
+Souvent un parent `pom` + plusieurs modules (`api`, `service`, `web`, etc.).
+
+### BOM / dependencyManagement
+
+Centraliser les versions dans `<dependencyManagement>` (ou utiliser un BOM) pour éviter les conflits.
+
+### Maven Wrapper
+
+Préférer `./mvnw` (version Maven contrôlée) dans les pipelines.
+
+### `settings.xml`
+
+Utile en entreprise (proxy, mirror, registry interne) : dépôt Nexus/Artifactory.
+
 1. **Versionner le fichier `pom.xml`** : Ajoutez `pom.xml` au contrôle de version pour garantir la cohérence des dépendances.
 2. **Utiliser des profils Maven** : Configurez des profils pour gérer différents environnements (ex. développement, production).
 3. **Analyser les dépendances** : Utilisez `mvn dependency:analyze` pour identifier les dépendances inutilisées.

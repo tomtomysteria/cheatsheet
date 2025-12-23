@@ -69,6 +69,18 @@ Les niveaux de logs permettent de catégoriser les messages en fonction de leur 
 4. **Configurer la rotation des logs** : Éviter que les fichiers de logs ne deviennent trop volumineux.
 5. **Surveiller les logs** : Utiliser des outils comme ELK (Elasticsearch, Logstash, Kibana) pour analyser les logs.
 
+Voir aussi : `data/elk.md`
+
+---
+
+## Logs structurés (JSON)
+
+Les logs structurés facilitent la recherche et les dashboards (ELK). Recommandations :
+
+- Logguer au format JSON
+- Ajouter des champs standard : `service`, `env`, `traceId`/`spanId` (si tracing), `requestId`
+- Ne pas logguer de données sensibles (PII, secrets)
+
 ---
 
 ## Outils de gestion des logs

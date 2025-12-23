@@ -52,6 +52,11 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 - [DTO (Data Transfer Object)](./data/dto.md)
 - [Zod](./data/zod.md)
 
+### Messaging (events / queues)
+
+- [Kafka](./data/kafka.md)
+- [RabbitMQ](./data/rabbitmq.md)
+
 ### Gestion des exceptions et validation
 
 - [Exceptions](./data/exceptions.md)
@@ -64,6 +69,9 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 ### Surveillance et diagnostic
 
 - [Logging](./data/logging.md)
+- [Prometheus](./data/prometheus.md)
+- [Grafana](./data/grafana.md)
+- [ELK (Elasticsearch / Logstash / Kibana)](./data/elk.md)
 
 ### Bibliothèques et outils
 
@@ -100,6 +108,7 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 
 - [SQL](./data/sql.md)
 - [PostgreSQL](./data/postgresql.md)
+- [Liquibase](./data/liquibase.md)
 - [MongoDB](./data/mongodb.md)
 - [TypeORM](./data/typeorm.md)
 - [Hibernate](./data/hibernate.md)
@@ -116,11 +125,18 @@ Bienvenue dans le projet **Cheatsheet App** ! Ce dépôt contient des documentat
 
   - [Docker](./data/docker.md)
   - [Kubernetes](./data/kubernetes.md)
+  - [Helm](./data/helm.md)
+
+  #### CI/CD
+
+  - [GitLab CI/CD](./data/gitlab-ci.md)
+  - [Jenkins](./data/jenkins.md)
 
   #### Synchronisation et automatisation
 
   - [Mutagen](./data/mutagen.md)
   - [CI/CD](./data/ci_cd.md)
+  - [Ansible](./data/ansible.md)
 
   #### Plateformes cloud
 

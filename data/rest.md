@@ -112,6 +112,16 @@ curl -X GET "http://example.com/api/users?role=admin"
 
 ## Bonnes pratiques
 
+### À connaître en entreprise (design API)
+
+- **Format d’erreur stable** : JSON avec `code`, `message`, `details` (et idéalement `traceId`).
+- **Pagination/tri** : `page`, `size`, `sort`, et réponse avec `totalElements`, `totalPages`.
+- **Idempotence** : `PUT` idempotent, `PATCH` pour modifications partielles.
+- **Contrat OpenAPI** : documenter (Swagger/OpenAPI) et éviter les breaking changes.
+- **Sécurité** : auth (JWT/OAuth2), scopes/roles, HTTPS partout.
+
+### Rappels
+
 1. **Respecter les verbes HTTP** : Utilisez les verbes HTTP (`GET`, `POST`, `PUT`, `DELETE`) de manière appropriée pour refléter les actions.
 2. **Utiliser des codes de statut HTTP** : Retournez des codes de statut HTTP (`200 OK`, `201 Created`, `404 Not Found`, `500 Internal Server Error`) pour indiquer le résultat des requêtes.
 3. **Documenter l'API** : Utilisez des outils comme Swagger ou Postman pour documenter et tester votre API.

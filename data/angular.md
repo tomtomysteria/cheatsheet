@@ -144,7 +144,7 @@ export class Product {
 
 ### Contrôleurs
 
-Bien qu'Angular utilise principalement des composants, les contrôleurs peuvent être intégrés pour gérer la logique complexe.
+⚠️ Angular (moderne) est centré sur les **composants**. La notion de “controller” est surtout associée à **AngularJS** (ancienne génération).
 
 ### Logs
 
@@ -206,6 +206,80 @@ npm install -g @angular/cli
 - Suivez les conventions de nommage Angular.
 - Optimisez les performances en utilisant le lazy loading pour les modules.
 - Utilisez des outils de gestion des logs pour surveiller les erreurs et les performances.
+
+## À connaître en poste (essentiel)
+
+### HttpClient + Interceptors (auth / erreurs)
+
+On utilise `HttpClient` (Observables) et des **interceptors** pour :
+
+- ajouter un token (Authorization)
+- centraliser la gestion d’erreurs
+
+Exemple d’interceptor (simplifié) :
+
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http';
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<unknown>, next: HttpHandler) {
+    const token = localStorage.getItem('token');
+    if (!token) return next.handle(req);
+
+    return next.handle(
+      req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
+    );
+  }
+}
+```
+
+### RxJS (indispensable)
+
+Opérateurs très fréquents : `map`, `tap`, `switchMap`, `catchError`, `finalize`, `debounceTime`.
+
+### Forms
+
+- **Reactive Forms** (souvent préféré) : validations, formulaires complexes.
+
+### Routing avancé
+
+- **Guards** (auth)
+- **Lazy loading** (performance)
+
+### Perf
+
+- `ChangeDetectionStrategy.OnPush`
+- `trackBy` sur les `*ngFor`
+
+---
+
+## Mini exemple end-to-end (Angular → Spring Boot)
+
+### Service Angular qui appelle une API Spring
+
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface UserDto {
+  id: number;
+  email: string;
+}
+
+@Injectable({ providedIn: 'root' })
+export class UsersApi {
+  constructor(private http: HttpClient) {}
+
+  list(): Observable<UserDto[]> {
+    return this.http.get<UserDto[]>('/api/users');
+  }
+}
+```
+
+Note : en dev, tu peux configurer un proxy (`proxy.conf.json`) pour éviter CORS.
 
 ## Documentation officielle
 
