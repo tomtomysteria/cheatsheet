@@ -40,12 +40,20 @@ git config --list            # Affiche la configuration actuelle
 ### Gestion des fichiers
 
 ```bash
+git status                   # Affiche l'état du dépôt
+git diff                     # Compare les modifications non validées
+git diff --staged            # Compare les modifications déjà stagées (index)
+git diff HEAD                # Compare tous les changements (staged + non-staged) par rapport à HEAD
+git log                      # Affiche l'historique des commits
+git show                     # Affiche le dernier commit (message + diff)
 git add <file>               # Ajoute un fichier au suivi
 git add .                    # Ajoute tous les fichiers modifiés
+git restore --staged <file>  # Unstage un fichier (retire du stage, garde les modifs)
+git restore --staged .       # Unstage tous les fichiers
+# Alternative (plus ancienne) :
+# git reset HEAD -- <file>   # Unstage un fichier
+# git reset HEAD -- .        # Unstage tous les fichiers
 git commit -m "Message"      # Enregistre les modifications avec un message
-git status                   # Affiche l'état du dépôt
-git log                      # Affiche l'historique des commits
-git diff                     # Compare les modifications non validées
 ```
 
 ### Branches
@@ -53,6 +61,7 @@ git diff                     # Compare les modifications non validées
 ```bash
 git branch                   # Liste les branches
 git branch <branch-name>     # Crée une nouvelle branche
+git branch -M <branch-name>  # Renomme la branche courante en `<branch-name>` (force si `<branch-name>` existe)
 git checkout <branch-name>   # Change de branche
 git switch <branch-name>     # Alternative moderne à `checkout`
 git merge <branch-name>      # Fusionne une branche dans la branche actuelle
@@ -65,6 +74,7 @@ git branch -d <branch-name>  # Supprime une branche
 git remote add origin <url>  # Ajoute un dépôt distant
 git remote -v                # Liste les remotes configurés
 git push origin <branch-name> # Pousse les modifications vers le dépôt distant
+git push -u origin <branch-name> # Pousse et définit l'upstream (ensuite `git push`/`git pull` sans args)
 git pull origin <branch-name> # Récupère les modifications du dépôt distant
 git fetch origin             # Récupère les modifications sans fusionner
 ```
@@ -122,6 +132,7 @@ git config --global merge.tool meld # Configure Meld comme outil de fusion
 ### Logs avancés
 
 ```bash
+git log --oneline --graph --decorate -n 20  # Vue courte des 20 derniers commits
 git log --oneline               # Affiche les commits en une seule ligne
 git log --graph --decorate      # Affiche un graphe des commits avec décorations
 git log --author="Nom"         # Filtre les commits par auteur
@@ -177,9 +188,10 @@ git commit -m "Résolution des conflits"
 
 1. **Utiliser des messages de commit clairs** : Décrivez brièvement les modifications apportées.
 2. **Travailler avec des branches** : Utilisez des branches pour isoler les fonctionnalités ou les corrections.
-3. **Vérifier avant de pousser** : Utilisez `git status` et `git diff` pour vérifier les modifications avant de les pousser.
-4. **Sauvegarder régulièrement** : Poussez vos modifications vers un dépôt distant pour éviter les pertes de données.
-5. **Nettoyer les branches** : Supprimez les branches inutilisées pour garder le dépôt organisé.
+3. **Adopter une convention de nommage des branches** : Par exemple `main` (production), `develop` (intégration), `feature/<nom>`, `bugfix/<nom>`, `hotfix/<nom>`, `release/<version>`.
+4. **Vérifier avant de pousser** : Utilisez `git status` et `git diff` pour vérifier les modifications avant de les pousser.
+5. **Sauvegarder régulièrement** : Poussez vos modifications vers un dépôt distant pour éviter les pertes de données.
+6. **Nettoyer les branches** : Supprimez les branches inutilisées pour garder le dépôt organisé.
 
 ---
 
