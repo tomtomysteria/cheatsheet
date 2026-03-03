@@ -115,8 +115,77 @@ docker run --name <container-name> my-app # Exécute un conteneur avec un nom sp
 
 ```bash
 docker system prune               # Supprime les conteneurs, images et volumes inutilisés
+docker system prune -a            # Supprime aussi les images non utilisées (pas seulement les dangling)
+docker system prune -a -f         # Idem sans demander de confirmation (force)
 docker volume prune               # Supprime les volumes inutilisés
 docker network prune              # Supprime les réseaux inutilisés
+```
+
+---
+
+## Docker Compose - Commandes avancées
+
+### 🚀 1️⃣ Gestion des conteneurs (démarrer / arrêter / redémarrer)
+
+```bash
+docker-compose up -d              # Démarre les services définis dans docker-compose.yaml en arrière-plan
+docker-compose up -d --build      # Rebuild les images avant de démarrer les conteneurs
+docker-compose down               # Arrête et supprime les conteneurs (garde les volumes)
+docker-compose down -v            # Arrête et supprime les conteneurs et les volumes (reset base de données, etc.)
+docker-compose down && docker-compose up -d --build # Redémarre tout en reconstruisant les images
+docker-compose restart <service>  # Redémarre un service spécifique
+docker-compose ps                 # Affiche l'état des conteneurs du projet courant
+docker-compose -f <path> ps       # Affiche l'état des conteneurs pour un autre fichier docker-compose
+```
+
+#### 🎯 En pratique (cas concrets)
+
+**✅ Tu as fini ta journée**
+→ `stop` suffit largement.
+
+**✅ Tu veux repartir vite demain**
+→ `stop` + `start`
+
+**✅ Tu as modifié la config réseau / variables d'environnement**
+→ `down` puis `up`
+
+**✅ Docker fait des trucs bizarres**
+→ `down` (voire `down -v` si gros reset)
+
+**🧠 Résumé ultra simple**
+
+| Commande | Action               |
+|----------|----------------------|
+| `stop`   | pause                |
+| `down`   | suppression          |
+| `start`  | reprendre            |
+| `up`     | créer + démarrer     |
+
+### 🔍 2️⃣ Consultation des logs
+
+```bash
+docker-compose logs               # Affiche les logs des services
+docker-compose logs -f            # Suit les logs en temps réel (mode "tail -f")
+docker-compose logs --tail=N      # Affiche seulement les N dernières lignes
+docker-compose logs <service>     # Affiche les logs d'un service précis
+docker-compose logs --no-log-prefix # Supprime le préfixe du nom du service dans les logs
+```
+
+### 🖥 3️⃣ Accéder à un conteneur
+
+```bash
+docker exec -it <container> bash  # Ouvre un terminal bash dans un conteneur en cours d'exécution
+docker exec -it <container> sh    # Ouvre un shell sh (si bash non disponible)
+docker exec -it <container> ls -la # Exécute une commande spécifique dans un conteneur
+docker-compose exec <service> <commande> # Exécute une commande dans un conteneur déjà démarré
+docker-compose exec -T <service> <commande> # Même chose mais sans pseudo-TTY (utile pour scripts CI/CD)
+```
+
+### 🧪 4️⃣ Debug / Inspection
+
+```bash
+docker-compose run --rm --entrypoint env <service> # Lance temporairement un conteneur et affiche les variables d'environnement
+docker run --rm --env-file .env <image> python debug_env.py # Lance une image Docker avec un fichier .env et exécute un script Python
 ```
 
 ---
