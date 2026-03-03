@@ -73,6 +73,8 @@ git branch -d <branch-name>  # Supprime une branche
 ```bash
 git remote add origin <url>  # Ajoute un dépôt distant
 git remote -v                # Liste les remotes configurés
+git remote set-url origin https://github.com/user/new-repo.git # Modifie l'URL d'un remote existant
+git remote add upstream https://github.com/org/repo.git # Ajoute un remote upstream (pour les forks)
 git push origin <branch-name> # Pousse les modifications vers le dépôt distant
 git push -u origin <branch-name> # Pousse et définit l'upstream (ensuite `git push`/`git pull` sans args)
 git pull origin <branch-name> # Récupère les modifications du dépôt distant
@@ -118,6 +120,14 @@ git show <commit-id>         # Affiche les détails d'un commit spécifique
 git clean -f                  # Supprime les fichiers non suivis
 git clean -fd                 # Supprime les fichiers et dossiers non suivis
 git clean -n                  # Affiche les fichiers qui seraient supprimés sans les supprimer
+```
+
+### GitHub CLI
+
+```bash
+gh auth status               # Affiche le statut d'authentification GitHub CLI
+gh auth switch -u <username> # Change d'utilisateur GitHub CLI
+gh auth setup-git            # Configure Git pour utiliser GitHub CLI comme helper d'authentification
 ```
 
 ### Configuration avancée
