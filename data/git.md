@@ -62,11 +62,14 @@ git commit -m "Message"      # Enregistre les modifications avec un message
 git branch                   # Liste les branches
 git branch <branch-name>     # Crée une nouvelle branche
 git branch -M <branch-name>  # Renomme la branche courante en `<branch-name>` (force si `<branch-name>` existe)
+git branch -vv               # Affiche les branches locales avec tracking distant et statut ahead/behind
 git checkout <branch-name>   # Change de branche
 git switch <branch-name>     # Alternative moderne à `checkout`
 git merge <branch-name>      # Fusionne une branche dans la branche actuelle
 git branch -d <branch-name>  # Supprime une branche
 ```
+
+`git branch -vv` est utile pour voir rapidement, pour chaque branche locale, le dernier commit, la branche distante suivie (upstream) et l'état d'avance/retard. Cette vue aide à décider s'il faut faire un `git pull`, un `git push` ou reconfigurer le suivi de branche.
 
 ### Collaboration
 
