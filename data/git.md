@@ -95,6 +95,15 @@ git stash                    # Sauvegarde temporairement les modifications
 git stash pop                # Récupère les modifications sauvegardées
 ```
 
+### Pull avec rebase
+
+```bash
+git pull --rebase origin <branch-name> # Récupère et rebase les commits locaux (historique linéaire)
+```
+
+Utilisez cette commande pour éviter un commit de merge lors du pull et garder un historique plus propre.
+À privilégier sur une branche personnelle ; à éviter sur une branche partagée si cela réécrit un historique déjà publié.
+
 ### Gestion des tags
 
 ```bash
